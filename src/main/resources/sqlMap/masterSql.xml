@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.sample.batch.dao.MasterDao">
+
+	<insert id="insertSample" parameterType="map">
+		INSERT INTO sample (
+			sample_name,
+			sample_pwd,
+			sample_status,
+			insert_date,
+			update_date
+		) VALUES (
+			#{sampleName},
+			#{samplePwd},
+			#{sampleStatus},
+			now(),
+			now()
+		)
+	</insert>
+
+	<update id="updateSample" parameterType="map">
+		UPDATE sample SET 
+			sample_status = #{sampleStatus},
+			update_date = now()
+		WHERE
+			sample_name = #{sampleName};
+	</update>
+
+	<delete id="deleteSample" parameterType="map">
+		DELETE FROM 
+			sample 
+		WHERE 
+			sample_name = #{sampleName}
+	</delete>
+
+</mapper>
