@@ -5,7 +5,7 @@ A sample for quick start a batch with Spring4
 
 ## About
 1. More [information](http://projects.spring.io/spring-framework) about Spring4.
-2. More [information](http://blog.mybatis.org) about Mybatis3
+2. More [information](http://blog.mybatis.org) about Mybatis3.
 3. More [information](https://www.gradle.org) about Gradle.
 
 * Spring4
