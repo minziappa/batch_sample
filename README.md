@@ -26,7 +26,8 @@ sample -> project name
 
 ## Compile
 gradle zip
-Run on your local system.
+
+## Run on your local system.
 ```
 ./startBatchSample.sh
 ```
