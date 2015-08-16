@@ -10,8 +10,8 @@ then
 fi
 # Batch batch process check script - end
 
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
-# JAVA_HOME=/usr/local/java
+# JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
+JAVA_HOME=/usr/local/java
 BASEDIR=/usr/local/app/batchSample
 PROGRAM_NAME=io.sample.batch.main.BatchMain
 

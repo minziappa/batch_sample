@@ -1,16 +1,16 @@
 # batch_sample
-A sample for quick start a batch with Spring4
+
+\[ [About](https://github.com/minziappa/batch_sample) • [Blog](http://njoonk.blogspot.jp/) \]
 
 [![Build Status](https://travis-ci.org/minziappa/batch_sample.svg?branch=master)](https://travis-ci.org/minziappa/batch_sample.svg)
 
-## About
-1. More [information](http://projects.spring.io/spring-framework) about Spring4.
-2. More [information](http://blog.mybatis.org) about Mybatis3.
-3. More [information](https://www.gradle.org) about Gradle.
+[Batch_sample][1] is a sample for quick start a batch with Spring4.
+It is based on [Java7][2] version.
 
-* Spring4
-* Mybatis3
-* Gradle
+## About
+* More [information](http://projects.spring.io/spring-framework) about Spring4.
+* More [information](http://blog.mybatis.org) about Mybatis3.
+* More [information](https://www.gradle.org) about Gradle.
 
 ## Requirements environment 
 
@@ -18,16 +18,28 @@ A sample for quick start a batch with Spring4
 * [Gradle](https://services.gradle.org/distributions/gradle-2.3-all.zip)
 
 ## Get started
-
-Change a project name like the following:
+Set password to root.
+```
+mysql>GRANT ALL PRIVILEGES ON sample_db.* TO root@'127.0.%' IDENTIFIED BY 'njoonk';
+```
+Execute install.sh
+```
+sh/install.sh
+```
+## Change a project name like the following:
 ```
 sample -> project name
 ```
 
-## Compile
+## Just build the Zip file
+```
 gradle zip
+```
 
 ## Run on your local system.
 ```
-./startBatchSample.sh
+/usr/local/app/batchSample/sh/batchSample.sh
 ```
+
+[1]: https://github.com/minziappa/batch_sample "Batch_sample"
+[2]: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html "Java7"

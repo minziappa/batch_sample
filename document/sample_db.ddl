@@ -1,6 +1,6 @@
 /* DROP TABLE sample_user; */
 
-CREATE DATABASE sample_db;
+CREATE DATABASE sample_db DEFAULT CHARACTER SET utf8;
 
 CREATE TABLE sample
 (
