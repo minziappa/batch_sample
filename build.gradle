@@ -42,6 +42,7 @@ dependencies {
 	compile 'org.mybatis:mybatis:3.3.0'
 	compile 'org.mybatis:mybatis-spring:1.2.3'
 	compile 'org.springmodules:spring-modules-jakarta-commons:0.8'
+	testCompile 'junit:junit:4.12'
 }
 
 final String DEFAULT_PROFILE = 'staging'
