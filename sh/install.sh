@@ -18,7 +18,7 @@ APP_EXE=${APP_NAME}.sh
 #	echo "${BASE_DIR} is made."
 #fi
 
-cp build/distributions/batchSample.zip /usr/local/app/
+cp build/distributions/${APP_ZIP} /usr/local/app/
 /usr/bin/unzip -o ${BASE_DIR}/${APP_ZIP} -d ${BASE_DIR}/${APP_NAME}/
 mkdir ${BASE_DIR}/${APP_NAME}/sh
 cp sh/${APP_EXE} ${BASE_DIR}/${APP_NAME}/sh/
