@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/minziappa/batch_sample.svg?branch=master)](https://travis-ci.org/minziappa/batch_sample.svg)
 
-[Batch_sample][1] is a sample for quick start a batch with Spring4.
+[Batch_sample][1] is a sample for quick start a batch with Spring4.  
 It is based on [Java7][2] version.
 
 ## About
