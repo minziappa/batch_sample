@@ -45,7 +45,7 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 }
 
-final String DEFAULT_PROFILE = 'staging'
+final String DEFAULT_PROFILE = 'develop'
 allprojects {
 	if (!project.hasProperty('profile') || !profile) {
 		ext.profile = DEFAULT_PROFILE
@@ -73,3 +73,10 @@ task zip(type: Zip) {
 // gradle zip
 zip.dependsOn(assemble)
 //assemble.dependsOn(zip)
+
+// $ gradle wrapper
+// $ gradlew zip
+// $ gradlew zip -Pprofile=staging
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.3'
+}

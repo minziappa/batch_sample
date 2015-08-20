@@ -1,5 +1,17 @@
 #!/bin/sh
 
+######
+#if [ -z "$1" ] || [ -z "$2" ]; then
+#	echo "empty"
+#	#exit 1
+#fi
+#
+#if [ -n "$3" ]; then
+#	echo "not empty"
+#fi
+#echo test
+######
+
 # Batch process check script - start
 declare -i batchCnt
 batchCnt=`ps -ef | grep BatchMain | grep -v "grep BatchMain" | wc -l`
