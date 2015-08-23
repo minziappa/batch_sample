@@ -8,16 +8,12 @@ import io.sample.batch.service.SampleService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BatchMain {
 
 	final static Logger logger = LoggerFactory.getLogger(BatchMain.class);
-	
-	@Autowired
-    private static SampleService sampleService;
 
 	/**
 	 * @param args
@@ -29,16 +25,16 @@ public class BatchMain {
 		SampleService sampleService = (SampleService) context.getBean("sampleServiceImpl");
 
 		SamplePara samplePara = new SamplePara();
-		// Insert
-		samplePara.setSampleName("test1");
-		samplePara.setSamplePwd("pwd1");
-		samplePara.setSampleStatus("0");
-		sampleService.insertTest(samplePara);
-
-		// Update
-		samplePara.setSampleName("test1");
-		samplePara.setSampleStatus("1");
-		sampleService.updateTest(samplePara);
+//		// Insert
+//		samplePara.setSampleName("test1");
+//		samplePara.setSamplePwd("pwd1");
+//		samplePara.setSampleStatus("0");
+//		sampleService.insertTest(samplePara);
+//
+//		// Update
+//		samplePara.setSampleName("test1");
+//		samplePara.setSampleStatus("1");
+//		sampleService.updateTest(samplePara);
 
 		// Select
 		sampleService.selectTest(1);
@@ -49,9 +45,9 @@ public class BatchMain {
 			logger.info(sample.getSamplePwd());
 			logger.info(sample.getSampleStatus());
 		}
-
-		// Delete
-		sampleService.deleteTest("test1");
+//
+//		// Delete
+//		sampleService.deleteTest("test1");
 
 	}
 

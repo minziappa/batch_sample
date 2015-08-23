@@ -23,9 +23,9 @@
 		<property name="maxIdle" value="5" />
 		<property name="maxWait" value="10000" />
 		<property name="poolPreparedStatements" value="true"/>
-    <property name="validationQuery" value="select 1"/>
-    <property name="testWhileIdle" value="true"/>
-    <property name="timeBetweenEvictionRunsMillis" value="7200000"/>
+		<property name="validationQuery" value="select 1"/>
+		<property name="testWhileIdle" value="true"/>
+		<property name="timeBetweenEvictionRunsMillis" value="7200000"/>
   </bean>
 
 <!-- Slave DB 00 -->
@@ -37,10 +37,24 @@
 		<property name="maxActive" value="5" />
 		<property name="maxIdle" value="5" />
 		<property name="maxWait" value="10000" />
-    <property name="validationQuery" value="select 1"/>
-    <property name="testWhileIdle" value="true"/>
-    <property name="timeBetweenEvictionRunsMillis" value="7200000"/>
-  </bean>
+		<property name="validationQuery" value="select 1"/>
+		<property name="testWhileIdle" value="true"/>
+		<property name="timeBetweenEvictionRunsMillis" value="7200000"/>
+	</bean>
+
+<!-- Slave DB 01 -->
+	<bean id="mysqlSlave01" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://${my.slave.01}:3306/sample_db?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true" />
+        <property name="username" value="${mysql.id}" />
+        <property name="password" value="${mysql.pwd}" />
+		<property name="maxActive" value="5" />
+		<property name="maxIdle" value="5" />
+		<property name="maxWait" value="10000" />
+		<property name="validationQuery" value="select 1"/>
+		<property name="testWhileIdle" value="true"/>
+		<property name="timeBetweenEvictionRunsMillis" value="7200000"/>
+	</bean>
 
 	<!-- Annotation Transaction -->
 	<bean id="transactionManager"
@@ -55,7 +69,7 @@
 		<property name="configLocation" value="classpath:masterMap.xml"/>
 	</bean>
 
-<!-- Slave-->
+<!-- Slave -->
 	<bean id="sqlSessionSlaveFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="mysqlSlave00" />
 		<property name="configLocation" value="classpath:slaveMap.xml"/>

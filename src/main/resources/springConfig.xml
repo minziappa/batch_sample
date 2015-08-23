@@ -17,12 +17,12 @@
 	<context:property-placeholder location="classpath:application.properties" />
 
 	<!-- Set the base package -->
-	<context:component-scan base-package="io.sample" />
+	<context:component-scan base-package="io.sample.batch.service.impl" />
 
 	<!-- Common Resource -->
 	<import resource="classpath:spring/common.xml"/>
 	<import resource="classpath:spring/db.xml"/>
+	<import resource="classpath:spring/mappingDb.xml"/>
 	<import resource="classpath:spring/dao.xml"/>
 	<import resource="classpath:spring/service.xml"/>
-
 </beans>

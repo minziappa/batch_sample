@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ######
 #if [ -z "$1" ] || [ -z "$2" ]; then
@@ -13,7 +13,7 @@
 ######
 
 # Batch process check script - start
-declare -i batchCnt
+declare -i batchCnt=0
 batchCnt=`ps -ef | grep BatchMain | grep -v "grep BatchMain" | wc -l`
 if [ $batchCnt -ge 1 ]
 then
@@ -22,9 +22,9 @@ then
 fi
 # Batch batch process check script - end
 
-# JAVA_HOME=/usr/local/java
-JAVA_HOME=$(/usr/libexec/java_home)
-echo $JAVA_HOME
+JAVA_HOME=/usr/local/java
+# This is configuration for Mac
+#JAVA_HOME=$(/usr/libexec/java_home)
 BASEDIR=/usr/local/app/batchSample
 PROGRAM_NAME=io.sample.batch.main.BatchMain
 

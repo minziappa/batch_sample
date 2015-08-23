@@ -8,6 +8,7 @@ import io.sample.batch.bean.model.SampleModel;
 import io.sample.batch.bean.para.SamplePara;
 import io.sample.batch.dao.MasterDao;
 import io.sample.batch.dao.SlaveDao;
+import io.sample.batch.service.AbstractService;
 import io.sample.batch.service.SampleService;
 
 import org.apache.commons.configuration.Configuration;
@@ -20,7 +21,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class SampleServiceImpl implements SampleService {
+public class SampleServiceImpl extends AbstractService implements SampleService {
 
 	final Logger logger = LoggerFactory.getLogger(SampleServiceImpl.class);
 
@@ -82,6 +83,7 @@ public class SampleServiceImpl implements SampleService {
 
 		SampleModel sample = null;
 		try {
+			sqlSessionSlaveFactory.setDataSource(getDispersionDb());
 			sample = slaveDao.getMapper(SlaveDao.class).selectSample(selectMap);
 			if(sample == null) {
 				return null;
@@ -105,6 +107,7 @@ public class SampleServiceImpl implements SampleService {
 		selectMap.put("sampleName", test);
 
 		try {
+			sqlSessionSlaveFactory.setDataSource(getDispersionDb());
 			sampleList = slaveDao.getMapper(SlaveDao.class).selectSampleList(selectMap);
 			if(sampleList == null) {
 				return null;
